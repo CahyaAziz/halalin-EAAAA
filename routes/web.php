@@ -10,6 +10,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 require __DIR__.'/settings.php';
+require __DIR__.'/admin.php';
 
 Route::middleware(['auth', 'verified'])->prefix('guardian')->name('guardian.')->group(function () {
     Route::get('/portal', [GuardianPortalController::class, 'index'])->name('portal');
