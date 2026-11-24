@@ -141,3 +141,40 @@
         @apply bg-background text-foreground;
     }
 }
+
+/*
+| Zawjan Panel Moderator tokens. Added as new names so the starter-kit
+| theme above is untouched. Used by resources/js/{pages,layouts,components}/admin.
+*/
+@theme {
+    --font-jakarta:
+        'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Playfair Display', ui-serif, Georgia, serif;
+
+    --color-brand: #137547;
+    --color-brand-deep: #093721;
+    --color-mint: #e8f5ee;
+    --color-porcelain: #f8fafc;
+    --color-honor: #d97706;
+    --color-ink: #0f172a;
+}
+
+/*
+| Desktop-only gate for the moderator panel.
+| Blocks phones/tablets: any viewport narrower than 1024px, or a touch-only
+| device (no hover, coarse pointer) of any size, e.g. a landscape iPad.
+| Touchscreen laptops still pass because their primary pointer is a mouse.
+*/
+.admin-device-gate {
+    display: none;
+}
+
+@media (max-width: 1023.98px), (hover: none) and (pointer: coarse) {
+    .admin-desktop-only {
+        display: none !important;
+    }
+
+    .admin-device-gate {
+        display: flex;
+    }
+}

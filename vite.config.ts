@@ -10,11 +10,21 @@ import { defineConfig, lazyPlugins } from 'vite-plus';
 export default defineConfig({
     plugins: lazyPlugins(() => [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.tsx'],
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.tsx',
+            ],
             refresh: true,
             fonts: [
                 bunny('Instrument Sans', {
                     weights: [400, 500, 600],
+                }),
+                // Zawjan Panel Moderator
+                bunny('Plus Jakarta Sans', {
+                    weights: [400, 500, 600, 700],
+                }),
+                bunny('Playfair Display', {
+                    weights: [600, 700],
                 }),
             ],
         }),
